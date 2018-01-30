@@ -29,8 +29,8 @@ public class ChipSpanChipCreator implements ChipCreator<ChipSpan> {
         int maxAvailableWidth = chipConfiguration.getMaxAvailableWidth();
 
         if (chipSpacing != -1) {
-            chip.setLeftMargin(chipSpacing / 2);
-            chip.setRightMargin(chipSpacing / 2);
+            chip.setLeftMargin(chipSpacing);
+            chip.setRightMargin(chipSpacing);
         }
         if (chipBackground != null) {
             chip.setBackgroundColor(chipBackground);
@@ -50,5 +50,7 @@ public class ChipSpanChipCreator implements ChipCreator<ChipSpan> {
         if (maxAvailableWidth != -1) {
             chip.setMaxAvailableWidth(maxAvailableWidth);
         }
+
+        chip.setUnderline(chipConfiguration.isChipUnderlined());
     }
 }

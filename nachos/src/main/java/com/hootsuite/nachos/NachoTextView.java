@@ -127,6 +127,7 @@ public class NachoTextView extends MultiAutoCompleteTextView implements TextWatc
     private int mChipTextSize = -1;
     private int mChipHeight = -1;
     private int mChipVerticalSpacing = -1;
+    private boolean mChipUnderlined = false;
 
     private int mDefaultPaddingTop = 0;
     private int mDefaultPaddingBottom = 0;
@@ -193,6 +194,7 @@ public class NachoTextView extends MultiAutoCompleteTextView implements TextWatc
                     R.style.DefaultChipSuggestionTextView);
 
             try {
+                mChipUnderlined = attributes.getBoolean(R.styleable.NachoTextView_chipUnderlined, false);
                 mChipSpacing = attributes.getDimensionPixelSize(R.styleable.NachoTextView_chipSpacing, -1);
                 mChipBackground = attributes.getColorStateList(R.styleable.NachoTextView_chipBackground);
                 mChipTextColor = attributes.getColor(R.styleable.NachoTextView_chipTextColor, -1);
@@ -439,7 +441,8 @@ public class NachoTextView extends MultiAutoCompleteTextView implements TextWatc
                     mChipTextSize,
                     mChipHeight,
                     mChipVerticalSpacing,
-                    availableWidth);
+                    availableWidth,
+                    mChipUnderlined);
 
             mChipTokenizer.applyConfiguration(text, configuration);
         }

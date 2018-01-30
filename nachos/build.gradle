@@ -51,8 +51,3 @@ dependencies {
         exclude group: 'org.mockito', module: 'mockito-core'
     }
 }
-
-apply from: 'maven_push.gradle'
-
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

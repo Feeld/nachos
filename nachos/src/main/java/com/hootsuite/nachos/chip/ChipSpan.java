@@ -64,6 +64,7 @@ public class ChipSpan extends ImageSpan implements Chip {
     private int mLeftMarginPx;
     private int mRightMarginPx;
     private int mMaxAvailableWidth = -1;
+    private boolean mUnderlined;
 
     private CharSequence mText;
     private String mTextToDraw;
@@ -413,6 +414,9 @@ public class ChipSpan extends ImageSpan implements Chip {
         if (mTextSize != -1) {
             paint.setTextSize(mTextSize);
         }
+
+        paint.setUnderlineText(mUnderlined);
+
         int height = calculateChipHeight(top, bottom);
         Paint.FontMetrics fm = paint.getFontMetrics();
 
@@ -494,5 +498,9 @@ public class ChipSpan extends ImageSpan implements Chip {
     @Override
     public String toString() {
         return mText.toString();
+    }
+
+    public void setUnderline(boolean underline) {
+        mUnderlined = underline;
     }
 }

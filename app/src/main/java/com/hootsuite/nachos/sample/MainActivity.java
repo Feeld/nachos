@@ -83,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
         nachoTextView.setAdapter(adapter);
         nachoTextView.setIllegalCharacters('\"');
         nachoTextView.addChipTerminator('\n', ChipTerminatorHandler.BEHAVIOR_CHIPIFY_ALL);
-        nachoTextView.addChipTerminator(' ', ChipTerminatorHandler.BEHAVIOR_CHIPIFY_TO_TERMINATOR);
+        nachoTextView.addChipTerminator(',', ChipTerminatorHandler.BEHAVIOR_CHIPIFY_TO_TERMINATOR);
         nachoTextView.addChipTerminator(';', ChipTerminatorHandler.BEHAVIOR_CHIPIFY_CURRENT_TOKEN);
         nachoTextView.setNachoValidator(new ChipifyingNachoValidator());
-        nachoTextView.enableEditChipOnTouch(true, true);
+        nachoTextView.enableEditChipOnTouch(false, true);
         nachoTextView.setOnChipClickListener(new NachoTextView.OnChipClickListener() {
             @Override
             public void onChipClick(Chip chip, MotionEvent motionEvent) {
